@@ -1,0 +1,35 @@
+pretrain: '/home/newdisk3/gld/MKD-ISLR/gloss6707_des_mamba_best.pt'
+seed: 1024
+data:
+    dataset: nationalcsl
+    modality: RGB
+    num_segments: 64
+    seg_length: 1
+    split: 1
+    batch_size: 64
+    workers: 8
+    gpus: 4
+    num_classes: 6707
+    image_tmpl: 'img_{:05d}.jpg'
+    val_list: '/home/newdisk3/gld/MKD-ISLR/lists/NationalCSL-DP/val_rgb_split1.txt'
+    label_list: '/home/newdisk3/gld/MKD-ISLR/lists/csl_labels.csv'
+    index_bias: 1
+    input_size: 224
+    randaug:
+        N: 0
+        M: 0
+network:
+    arch: ViT-B/16
+    init: True
+    drop_out: 0.0
+    emb_dropout: 0.0
+    type: clip_csl
+    sim_header: "Transf"
+    fix_text: False
+solver:
+    start_epoch: 0
+    evaluate: True
+    distance_metric: 'cosine'
+logging:
+    print_freq: 10
+    eval_freq: 1
