@@ -1,4 +1,4 @@
-pretrain: '/home/newdisk3/gld/MKD-ISLR/gloss6707_des_mamba_best.pt'
+pretrain: '/home/newdisk3/gld/KDG-SLR/gloss6707_des_mamba_best.pt'
 seed: 1024
 data:
     dataset: nationalcsl
