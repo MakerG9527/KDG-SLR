@@ -4,7 +4,7 @@ This repository contains the official PyTorch implementation of the paper:
 
 **Kinematic Description-Guided Vision-Language Alignment for Chinese Sign Language Recognition**
 
-Lide Guo, Yingshan Yan, Yangtao Wang, Yanzhao Xie, Mingwei Zhou, Jiaqi Chen, Siyuan Jing, Wensheng Zhang
+Lide Guo, Yingshan Yan, Yangtao Wang, Yanzhao Xie*, Mingwei Zhou, Jiaqi Chen, Siyuan Jing, Wensheng Zhang
 
 > **Abstract:** Isolated Sign Language Recognition (ISLR) enables efficient gesture-to-gloss translation and supports accessibility for the deaf and hard-of-hearing community. Existing vision-language methods rely on abstract gloss labels that lack physical execution information, creating a large semantic gap and limiting recognition accuracy. We present KDG-SLR, a kinematic description-guided framework that leverages detailed execution semantics from sign language dictionaries as a novel text modality. Our approach explicitly encodes handshape, orientation, movement and location, and establishes execution-grounded cross-modal alignment via contrastive learning. We employ Mamba as the text encoder to efficiently process long kinematic descriptions with linear complexity, and introduce a LoRA-based decoupled two-stage training strategy for parameter-efficient visual backbone adaptation.
 
