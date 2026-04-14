@@ -108,8 +108,8 @@ lists/csl_labels.csv   # columns: gloss, kinematic_description
 
 ## Pretrained Models
 
-| Model | Dataset | Top-1 | Download |
-|-------|---------|-------|----------|
+| Model | Dataset | Top-1 |
+|-------|---------|-------|
 | KDG-SLR | NationalCSL-DP (6,707) | 67.84% |
 | KDG-SLR | SLR-500 | 98.27% |
 | KDG-SLR | NMFs-CSL | 86.50% |
