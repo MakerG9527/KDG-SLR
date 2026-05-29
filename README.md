@@ -77,7 +77,9 @@ data/
 │   └── <signer_id>/<word_id>/img_xxxxx.jpg
 ├── SLR-500/
 │   └── ...
-└── NMFs-CSL/
+├── NMFs-CSL/
+│   └── ...
+└── WLASL/
     └── ...
 ```
 
@@ -94,7 +96,7 @@ lists/
 ├── NMFs-CSL/
 │   ├── train_rgb_split1.txt
 │   └── val_rgb_split1.txt
-└── WLASLL/
+└── WLASL/
     ├── train_rgb_split1.txt
     └── val_rgb_split1.txt
 ```
