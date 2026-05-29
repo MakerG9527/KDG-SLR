@@ -1,13 +1,11 @@
-# KDG-SLR: Kinematic Description-Guided Vision-Language Alignment for Chinese Sign Language Recognition
+#KDG-SLR
 
 This repository contains the official PyTorch implementation of the paper:
 
 **Kinematic Description-Guided Vision-Language Alignment for Chinese Sign Language Recognition**
+Anonymous Author(s)
 
-Lide Guo, Yingshan Yan, Yangtao Wang, Yanzhao Xie*, Mingwei Zhou, Jiaqi Chen, Siyuan Jing, Wensheng Zhang
-
-> **Abstract:** Isolated Sign Language Recognition (ISLR) enables efficient gesture-to-gloss translation and supports accessibility for the deaf and hard-of-hearing community. Existing vision-language methods rely on abstract gloss labels that lack physical execution information, creating a large semantic gap and limiting recognition accuracy. We present KDG-SLR, a kinematic description-guided framework that leverages detailed execution semantics from sign language dictionaries as a novel text modality. Our approach explicitly encodes handshape, orientation, movement and location, and establishes execution-grounded cross-modal alignment via contrastive learning. We employ Mamba as the text encoder to efficiently process long kinematic descriptions with linear complexity, and introduce a LoRA-based decoupled two-stage training strategy for parameter-efficient visual backbone adaptation.
-
+> **Abstract:** Isolated Sign Language Recognition (ISLR) classifies individual signs from video and is foundational for accessibility technologies. Existing vision-language methods rely on abstract gloss labels that convey no information about physical execution, leaving a substantial gap between visual and textual representations. To address this, we propose KDG-SLR, a kinematic description-guided framework that leverages detailed execution semantics from sign language dictionaries as a novel text modality, explicitly encoding handshape, orientation, location, and movement to establish execution-grounded cross-modal alignment via contrastive learning. We employ Mamba as the text encoder to fully encode long kinematic descriptions in linear time with higher efficiency than Transformer counterparts, and introduce a LoRA-based decoupled two-stage training strategy for parameter-efficient adaptation of the visual backbone. KDG-SLR achieves state-of-the-art results on three Chinese benchmarks, reaching 67.84\% Top-1 accuracy on the 6,707-class NationalCSL-DP. It further attains 16.52\% Top-1 cross-dataset zero-shot accuracy on unseen signs, which is infeasible for gloss-based methods, and consistent cross-lingual gains on WLASL.
 ---
 
 ## Results
@@ -93,7 +91,10 @@ lists/
 ├── SLR-500/
 │   ├── train_rgb_split1.txt
 │   └── val_rgb_split1.txt
-└── NMFs-CSL/
+├── NMFs-CSL/
+│   ├── train_rgb_split1.txt
+│   └── val_rgb_split1.txt
+└── WLASLL/
     ├── train_rgb_split1.txt
     └── val_rgb_split1.txt
 ```
@@ -101,7 +102,8 @@ lists/
 Prepare the kinematic description CSV (label list):
 
 ```
-lists/csl_labels.csv   # columns: gloss, kinematic_description
+lists/csl_labels.csv   # columns: gloss, kinematic_description; for NationalCSL-DL/SLR500/NMFs-CSL
+lists/asl_labels.csv   # columns: gloss, kinematic_description; for WLASL
 ```
 
 ---
@@ -113,6 +115,7 @@ lists/csl_labels.csv   # columns: gloss, kinematic_description
 | KDG-SLR | NationalCSL-DP (6,707) | 67.84% |
 | KDG-SLR | SLR-500 | 98.27% |
 | KDG-SLR | NMFs-CSL | 86.50% |
+| KDG-SLR | WLASL$\ddagger$ | 82.46% |
 
 The visual backbone uses **CLIP ViT-B/16** pretrained weights (downloaded automatically via the `clip` package). The Mamba text encoder uses the `state-spaces/mamba-130M` architecture.
 
@@ -172,12 +175,7 @@ Set the `pretrain` field in the config to the path of your checkpoint. The evalu
 If you find this work useful, please cite:
 
 ```bibtex
-@article{guo2025kdgslr,
-  title={Kinematic Description-Guided Vision-Language Alignment for Chinese Sign Language Recognition},
-  author={Guo, Lide and Yan, Yingshan and Wang, Yangtao and Xie, Yanzhao and Zhou, Mingwei and Chen, Jiaqi and Jing, Siyuan and Zhang, Wensheng},
-  journal={The Visual Computer},
-  year={2025}
-}
+None
 ```
 
 ---
